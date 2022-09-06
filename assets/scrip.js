@@ -75,4 +75,10 @@ function showquestions (questions, quizContainer) {
     quizContainer.innerhtml= output.join('')
     
 }
+showquestions(questions,quizContainer);
 
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('score');
+var submitButton = document.getElementById('finish');
+
+generateQuiz(questions, quizContainer, resultsContainer, submitButton);
