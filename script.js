@@ -1,12 +1,12 @@
-function generateQuiz(questions, quizContainer, scoreContainer, finishButton) {
+function generateQuiz(questions, quizContainer, resultsContainer, finishButton) {
 
     
     // Questions and answers for the quiz
     var questions =[ 
         {
-            question: "Inside which HTML elelment do we put the JavaScript> ",
+             question: "Inside which HTML elelment do we put the JavaScript> ",
             answers: {
-                A: "<js>",
+        A: "<js>",
         B: "<script>",
         C: "<javascript>",
         D: "jscript",
@@ -55,7 +55,7 @@ function generateQuiz(questions, quizContainer, scoreContainer, finishButton) {
 },
 ];
 
-function showquestions (questions, quizContainer) {
+function showQuestions (questions, quizContainer) {
     var output = [];
     var answers;
     
@@ -78,12 +78,12 @@ function showquestions (questions, quizContainer) {
             quizContainer.innerhtml= output.join('')
     
         }
-        showquestions(questions,quizContainer);
+        showQuestions(questions,quizContainer);
         
         var quizContainer = document.getElementById('quiz');
         var resultsContainer = document.getElementById('score');
         var submitButton = document.getElementById('finish');
         
-        generateQuiz(questions, quizContainer, resultsContainer, submitButton);
+        generateQuiz(questions, quizContainer, resultsContainer, finishButton);
 
     }
