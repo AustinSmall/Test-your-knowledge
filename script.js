@@ -1,15 +1,18 @@
-// Questions and answers for the quiz
-var questions =[ 
-    {
-    question: "Inside which HTML elelment do we put the JavaScript> ",
-    answers: {
-        A: "<js>",
+function generateQuiz(questions, quizContainer, scoreContainer, finishButton) {
+
+    
+    // Questions and answers for the quiz
+    var questions =[ 
+        {
+            question: "Inside which HTML elelment do we put the JavaScript> ",
+            answers: {
+                A: "<js>",
         B: "<script>",
         C: "<javascript>",
         D: "jscript",
     },
     correctanswer: "B"
- },
+},
 {
     question: "Which of the following function of Number object returns the number's value?",
     answers: {
@@ -61,24 +64,26 @@ function showquestions (questions, quizContainer) {
         for(letter in questions[i].answers){
             answers.push(
                 '<label>'
-					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
-					+ letter + ': '
-					+ questions[i].answers[letter]
+                + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                + letter + ': '
+                + questions[i].answers[letter]
 				+ '</label>'
-            );
-        }
-        output.push(
-			'<div class="question">' + questions[i].question + '</div>'
-			+ '<div class="answers">' + answers.join('') + '</div>'
-		);
-	}
-    quizContainer.innerhtml= output.join('')
+                );
+            }
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+                + '<div class="answers">' + answers.join('') + '</div>'
+                );
+            }
+            quizContainer.innerhtml= output.join('')
     
-}
-showquestions(questions,quizContainer);
+        }
+        showquestions(questions,quizContainer);
+        
+        var quizContainer = document.getElementById('quiz');
+        var resultsContainer = document.getElementById('score');
+        var submitButton = document.getElementById('finish');
+        
+        generateQuiz(questions, quizContainer, resultsContainer, submitButton);
 
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('score');
-var submitButton = document.getElementById('finish');
-
-generateQuiz(questions, quizContainer, resultsContainer, submitButton);
+    }
