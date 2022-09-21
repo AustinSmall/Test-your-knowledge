@@ -4,14 +4,14 @@ function generateQuiz(questions, quizContainer, resultsContainer, finishButton) 
     // Questions and answers for the quiz
     var questions =[ 
         {
-             question: "Inside which HTML elelment do we put the JavaScript> ",
+             question: "Inside which HTML elelment do we put the JavaScript?",
             answers: {
         A: "<js>",
         B: "<script>",
         C: "<javascript>",
         D: "jscript",
     },
-    correctanswer: "B"
+    correctanswer:'B'
 },
 {
     question: "Which of the following function of Number object returns the number's value?",
@@ -21,7 +21,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, finishButton) 
         C: "toLocaleString()",
         D: "toPrecision()",
     },
-    correctanswer: "B"
+    correctanswer: 'B'
 },
 {
     question: "Which of the followong function of Array object reprsents the source code of an object",
@@ -31,7 +31,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, finishButton) 
         C: "toString",
         D: "Unshift",
     },
-    correctanswer: "A",
+    correctanswer: 'A',
 },
 {
     question : "Which built-in method returns the characters in a string beginning at the specified location?",
@@ -41,7 +41,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, finishButton) 
         C: "slice",
         D: "None of the above",
     },
-    correctanswer: "A",
+    correctanswer: 'A',
 },
 {
     question: "Which of the following function of Array object returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found?",
@@ -82,7 +82,7 @@ function showQuestions (questions, quizContainer) {
         
         var quizContainer = document.getElementById('quiz');
         var resultsContainer = document.getElementById('score');
-        var submitButton = document.getElementById('finish');
+        var finishButton = document.getElementById('finish');
         
         generateQuiz(questions, quizContainer, resultsContainer, finishButton);
 
