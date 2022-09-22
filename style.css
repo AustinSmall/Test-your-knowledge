@@ -2,10 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
     background-color: rgb(0, 85, 255);
+}
+button {
+    cursor: pointer;
 }
 
 .start_btn {
@@ -14,10 +18,30 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 30px;
-    padding: 15px, 30px;
+    padding: 15px;
 }
 
-.start_btn button {
-    outline: none;
-    overflow: hidden;
+.info-list {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 200px;
+    width: 400px;
 }
+.info-list h2 {
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.info-list .info  {
+    padding-bottom: 10px;
+}
+
+.info-list .buttons {
+    padding-top: 10px;
+    border-top: 2px solid black;
+    
+}
+

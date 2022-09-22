@@ -10,16 +10,48 @@
             <button class= "start_btn"> Start Quiz </button>
         </div>
         <div class="info-list">
-            Rules for the quiz
-           <div class-info> 1. You will have 5 minutes to do the quiz. </div>
+            <h2>Rules for the quiz </h2>
+           <div class= "info"> 1. You will have 60 seconds to do the quiz. </div>
            <div class = "info"> 2. For every question you get wrong the timer will decrease. </div>
            <div class ="info">  3. Points will be rewarded based on how many questions you get correct. </div>
+           <div class="buttons">
+               <button class= "quit"> Quit Quiz </button>
+               <button calss = "continue"> Continue </button>
+           </div>
         </div>
 
-        <div class="buttons">
-            <button class= "quit"> Quit Quiz </button>
-            <button calss = "continue"> Continue </button>
+        <div class ="quizbox">
+            <header>
+                <title>Javascript Quiz</title>
+                <div class = "timer">
+                    <div class ="timertext"> Time left </div>
+                    <div class = "timersec"> 60  </div>
+                </div>
+            </header>
+            <section>
+                <div class = "question">
+                    <span>"Inside which HTML elelment do we put the JavaScript?"</span>
+                </div>
+                <div class=" choice-list">
+                    <div class= "choices"> 
+                        <span> "js" </span>
+                            <div class="cross"> <i class="ff"> </i></div>
+                    </div>
+                    <div class="choices">
+                        <span> script </span>
+                        <div class="check"></div>
+                        
+                    </div>
+                    <div class= "choices"> 
+                        <span> "Javascript" </span>
+                            <div class="cross"> <i class="ff"> </i></div>
+                </div>
+                <div class= "choices"> 
+                    <span> "jscript" </span>
+                        <div class="cross"> <i class="ff"> </i></div>
+            </section>
         </div>
+
         
         <div id = "score"></div>
     </body>

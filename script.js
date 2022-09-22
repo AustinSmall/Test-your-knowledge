@@ -12,6 +12,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, finishButton) 
         D: "jscript",
     },
     correctanswer:'B'
+
 },
 {
     question: "Which of the following function of Number object returns the number's value?",
