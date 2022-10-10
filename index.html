@@ -1,73 +1,86 @@
 <!DOCTYPE html>
-<meta charset="UTF-8" />
-<title>Javascript Quiz</title>
-<link rel="stylesheet" href="style.css">
-<html lang="=en">
-    <script src= "script.js"></script>
-    <body>
-        <div id="quiz"></div>
-        <div>
-            <button class= "start_btn"> Start Quiz </button>
-        </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Knowledge</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- start quiz button -->
+    <div class="start_btn"><button>Start Quiz</button></div>
+    <!-- info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
         <div class="info-list">
-            <div class = "info-title"><h2>Rules for the quiz</h2></div>
-            <div class="list"
-           <div class= "info"> 1. You will have 60 seconds to do the quiz. </div>
-           <div class = "info"> 2. For every question you get wrong the timer will decrease. </div>
-           <div class ="info">  3. Points will be rewarded based on how many questions you get correct. </div>
-           <div class="buttons">
-               <button class= "quit"> Quit Quiz </button>
-               <button calss = "continue"> Continue </button>
-           </div>
+            <div class="info">1. You will have only <span>60 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it cannot be changed.</div>
+            <div class="info">3. You cannot select any option once time goes off.</div>
+            <div class="info">4. You cannot exit from the Quiz while you are still taking it.</div>
+            <div class="info">5. You will get points based off  your correct answers.</div>
         </div>
-
-        <div class ="quizbox">
-            <header>
-                <title>Javascript Quiz</title>
-                <div class = "timer">
-                    <div class ="timertext"> Time left </div>
-                    <div class = "timersec"> 60  </div>
-                </div>
-                <div class="timeline"></div>
-            </header>
-            <section>
-                <div class = "question">
-                    <span>"Inside which HTML elelment do we put the JavaScript?"</span>
-                </div>
-                <div class=" choice-list">
-                    <div class= "choices"> 
-                        <span> "js" </span>
-                            <div class="cross"> <i class="ff"> </i></div>
-                    </div>
-                    <div class="choices">
-                        <span> script </span>
-                        <div class="check"></div>
-                        
-                    </div>
-                    <div class= "choices"> 
-                        <span> "Javascript" </span>
-                            <div class="cross"> <i class="ff"> </i></div>
-                </div>
-                <div class= "choices"> 
-                    <span> "jscript" </span>
-                        <div class="cross"> <i class="ff"> </i></div>
-            </section>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
         </div>
-
+    </div>
+    <!-- quiz box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Awesome Quiz Application</div>
+            <div class="timer">
+                <div class="timeleft_txt">Time Left</div>
+                <div class="timer_sec">60</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                
+            </div>
+            <div class="option_list">
+           
+            </div>
+        </section>
+        
         <footer>
             <div class="total_que">
-
+         
             </div>
             <button class="next_btn">Next Question</button>
         </footer>
-            <div class="result_box">
-                <div class="complete_text"> You Have Completed the Quiz!</div>
-                <div class="score_text">
-
-                </div>
-            </div>
-            <script scr= "script.js"></script>
+    </div>
+    <!-- result box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="result_text">You have completed the Quiz!</div>
+        <div class="score_text">
+           
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
         
+    </div>
+
+    <div class="alert_box">
+        <div class="alert_text"> Your time is up!</div>
+        
+            <div class="buttons">
+                <button class = results> Go to Results</button>
+            </div>
        
-    </body>
-    </html>
+    </div>
+    >
+    <script src="questions.js"></script>
+  
+    <script src="script.js"></script>
+</body>
+</html>
+</html>
