@@ -9,7 +9,10 @@ const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
-
+var scoreAreaEl = document.querySelector('#scoreArea');
+var inNameEl = document.querySelector('#inName');
+var buttonDivEl = document.querySelector('#saveButton');
+var highScoreEl = document.querySelector('#highScores')
 
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); 
@@ -118,6 +121,7 @@ function optionSelected(answer){
         answer.classList.add("incorrect"); 
         answer.insertAdjacentHTML("beforeend", crossIconTag); 
         console.log("Wrong Answer");
+        timeCount.textContent -=5;
         
         for(i=0; i < allOptions; i++){
             if(option_list.children[i].textContent == correcAns){ 
@@ -159,37 +163,88 @@ function startTimer(time){
     function timer(){
         timeCount.textContent = time; 
         time--; 
-        if(time < 9){ 
-            let addZero = timeCount.textContent; 
-            timeCount.textContent = "0" + addZero; 
-        }
         if(time < 0){ 
             clearInterval(counter); 
             timeText.textContent = "Time Off"; 
-            const allOptions = option_list.children.length; 
-            let correcAns = questions[que_count].answer; 
-            for(i=0; i < allOptions; i++){
-                if(option_list.children[i].textContent == correcAns){ 
-                    option_list.children[i].setAttribute("class", "option correct"); 
-                    option_list.children[i].insertAdjacentHTML("beforeend", checkIconTag); 
-                    console.log("Time Off: Auto selected correct answer.");
-                }
-            }
-            for(i=0; i < allOptions; i++){
-                option_list.children[i].classList.add("disabled"); 
-            next_btn.classList.add("show"); 
         }
     }
 }
 
-
+function queCounter(index){
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    bottom_ques_counter.innerHTML = totalQueCounTag;
+}
 
 function startTimerLine(time){
     counterLine = setInterval(timer, 116);
     function timer(){
-        time += 1; 
-        time_line.style.width = time + "px"; 
-
+        time += 1; //upgrading time value with 1
+        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
+        
     }
 }
+
+function gameOver() {
+    clearInterval(runningTimer);
+    countdownEl.innerHTML = "Finished";
+    displayScore();
+    savedScore ();
 }
+
+// once all questions have been answered give me a final score 
+function displayScore () {
+    questionConEl.replaceWith(result_box);
+    scoreAreaEl.innerText = "Final Score:" + score;
+     // Create an input element for initials 
+    initTextEl = document.createElement("input"); 
+    initTextEl.setAttribute("id", "initails-input"); 
+    initTextEl.setAttribute("type", "text"); 
+    initTextEl.setAttribute("name", "iniatials"); 
+    initTextEl.setAttribute("placeholder", "Enter Initials here"); 
+      
+    inNameEl.appendChild(initTextEl);
+
+
+    // create save button elemetn
+    saveButtonEl = document.createElement("button");
+    saveButtonEl.setAttribute("id" , "save-btn");
+    saveButtonEl.setAttribute("class" ,"save-btn");
+    saveButtonEl.setAttribute("type" , "submit");
+    saveButtonEl.textContent = "Save Score";
+
+    inNameEl.appendChild(saveButtonEl);
+
+    inNameEl.addEventListener("submit", viewHighScores);
+}
+
+function viewHighScores (e) { 
+  e.preventDefault();
+    var name = document.querySelector("#initails-input").value;
+    savedInit(name);
+    
+    scorePageEl.replaceWith(highScoreEl)
+    loadSaveScores();
+  
+}
+
+
+//function to save task in local storage 
+var savedScore = function() {
+    localStorage.setItem("score", JSON.stringify(score));
+}
+var savedInit = function(initails) {
+    localStorage.setItem("initails", JSON.stringify(initails));
+}
+
+// gets tasks from local storage and load them
+function loadSaveScores() {
+    // get tasks items from local stroage
+    var savedScore = localStorage.getItem("score");
+    var savedInit = localStorage.getItem("initails");
+
+    savedScore  = JSON.parse(savedScore);
+    savedInit = JSON.parse(savedInit);
+
+    document.getElementById("highScores").innerHTML = savedInit + " - " + savedScore;
+   
+}   
